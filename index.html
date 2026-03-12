@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王子钰 | Ziyu Wang - Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d0d0d;
+            --accent: #d4af37;
+            --text: #ffffff;
+            --muted: #b0b0b0;
+            --card-bg: #1a1a1a;
+            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Noto Sans SC', sans-serif; line-height: 1.6; }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            background: linear-gradient(135deg, #0d0d0d 60%, #1a1a1a 100%);
+        }
+        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; line-height: 1; margin: 20px 0; }
+        .hero-img {
+            width: 380px; height: 500px;
+            border: 8px solid var(--card-bg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .hero-img:hover img { transform: scale(1.03); }
+
+        /* --- Layout Grid --- */
+        .container { padding: 80px 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .section-card { background: var(--card-bg); padding: 45px; border-radius: 4px; border: 1px solid #252525; }
+        .full-width { grid-column: span 3; }
+        .span-2 { grid-column: span 2; }
+
+        h2 { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2.4rem; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h3 { color: var(--accent); font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
+        .date-location { font-size: 0.85rem; color: var(--muted); margin-bottom: 15px; display: block; }
+        
+        ul { list-style: none; }
+        li { margin-bottom: 12px; position: relative; padding-left: 20px; color: #ddd; font-size: 0.95rem; }
+        li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+
+        /* --- Portfolio Clickable --- */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pdf-link {
+            text-decoration: none; color: inherit; display: block;
+            background: #222; padding: 30px; border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+        .pdf-link:hover { background: #2a2a2a; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .pdf-link span { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+
+        .skill-tag { 
+            display: inline-block; border: 1px solid var(--accent); color: var(--accent);
+            padding: 4px 12px; margin: 5px; font-size: 0.8rem; border-radius: 20px;
+        }
+
+        footer { padding: 100px 10%; background: #080808; text-align: center; }
+        .contact-info { font-size: 1.5rem; color: var(--accent); text-decoration: none; font-family: 'Playfair Display', serif; }
+
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .span-2, .full-width { grid-column: span 1; }
+            .hero { flex-direction: column; text-align: center; height: auto; padding-top: 50px; }
+            .hero-img { margin-top: 40px; width: 300px; height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-text">
+            <p style="letter-spacing: 4px; color: var(--accent);">CURRICULUM VITAE</p>
+            <h1>王子钰<br>ZIYU WANG</h1>
+            <p style="max-width: 500px; color: var(--muted); font-size: 1.1rem;">
+                中山大学历史学学士 | 金融学辅修<br>
+                深耕 MEAL 体系与数据调研，致力于以跨学科视角拆解商业逻辑。
+            </p>
+        </div>
+        <div class="hero-img">
+            <img src="微信图片_20260303095704_714_99.jpg" alt="王子钰个人照片">
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-card span-2">
+            <h2>Internship Experience</h2>
+            
+            <div class="exp-item">
+                <h3>Save the Children (联合国附属机构) | MEAL 实习生</h3>
+                <span class="date-location">2025.10 - 2026.03 | 广州</span>
+                <ul>
+                    <li>支持 3 个并行项目文档管理与数据归档，建立标准化资料体系；跟踪 KPI、预算执行及交付成果。</li>
+                    <li>设计并维护项目看板，可视化性能指标；制作 briefs，优化报告呈现形式，提升可读性。</li>
+                    <li>参与评价活动执行与效果跟踪，输出报告，助力活动转化与内部文档优化。</li>
+                    <li>书面英语与国际团队协作，确保跨部门联动数据准确。</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>TOPONE | 数据与报告实习生</h3>
+                <span class="date-location">2025.07 - 2025.09 | 远程</span>
+                <ul>
+                    <li>处理日常运营数据，使用数据透视表复盘分析，实现报告清晰度提升 15%。</li>
+                    <li>独立产出 6 份海外游戏市场调研报告，深度拆解头部产品玩法机制、付费模型及商业化路径。</li>
+                    <li>开发图表与演示材料，为项目迭代提供数据支撑。</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>广州日报 / 深圳商报 | 助理研究员 / 实习生</h3>
+                <span class="date-location">2023.02 - 2025.05</span>
+                <ul>
+                    <li>负责教育政策、区域经济调研；策划“节气文化”宣传 H5，支持跨部门高效协作。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>Education</h2>
+            <p><strong>中山大学</strong></p>
+            <p class="date-location">2022.09 - 2026.06</p>
+            <ul>
+                <li>历史学 (主修) / 金融学 (辅修)</li>
+                <li>GPA: 3.8 / 4.0 (排名 3/68)</li>
+                <li>连续三年获得国家奖学金</li>
+            </ul>
+
+            <h2 style="margin-top:40px;">Core Skills</h2>
+            <div style="margin-top:15px;">
+                <span class="skill-tag">Python (Pandas)</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">SPSS / R</span>
+                <span class="skill-tag">IELTS 8.0</span>
+                <span class="skill-tag">Spanish B1</span>
+                <span class="skill-tag">数据可视化</span>
+                <span class="skill-tag">史料解读</span>
+            </div>
+        </div>
+
+        <div class="section-card full-width">
+            <h2>Research Portfolio</h2>
+            <p style="margin-bottom:20px; color:var(--muted)">点击下方卡片可直接在线预览调研报告全文：</p>
+            <div class="portfolio-grid">
+                <a href="竞品分析.pdf" target="_blank" class="pdf-link">
+                    <span>PDF Report</span>
+                    <h4 style="margin-top:10px;">清理工具竞品调研</h4>
+                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">拆解 AppStore Top100 转化钩子与素材逻辑。</p>
+                </a>
+                <a href="休闲游戏调研总结.pdf" target="_blank" class="pdf-link">
+                    <span>PDF Report</span>
+                    <h4 style="margin-top:10px;">休闲游戏市场总结</h4>
+                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">分析海外及微信小游戏品类趋势与艺术风格。</p>
+                </a>
+                <a href="海外遥控器产品评论分析.pdf" target="_blank" class="pdf-link">
+                    <span>PDF Report</span>
+                    <h4 style="margin-top:10px;">海外遥控器评论分析</h4>
+                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">基于用户痛点洞察连接稳定性与商业化建议。</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="section-card span-2">
+            <h2>Leadership & Projects</h2>
+            <div class="exp-item">
+                <h3>中山大学 2024 深圳寒招队 | 队长</h3>
+                <ul>
+                    <li>统筹管理 440 人大型团队，通过数据监测实现新媒体矩阵总曝光量 14W+。</li>
+                    <li>产出 47 篇高质量推送，单篇最高阅读量 6000+。</li>
+                </ul>
+            </div>
+            <div class="exp-item">
+                <h3>历史学系学生会 | 宣调部部长</h3>
+                <ul>
+                    <li>负责运营学院公众号，累计阅读量 90,000+；合著 2 万字青年创新调研报告。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>Other Projects</h2>
+            <ul>
+                <li><strong>廉洁文化展：</strong>史料搜集、撰稿与讲解。</li>
+                <li><strong>北京路调研：</strong>管理学院调研数据分类呈现。</li>
+                <li><strong>中大附中实习：</strong>事业单位运行模式研究。</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <a href="mailto:wangziyu0707.esther@gmail.com" class="contact-info">wangziyu0707.esther@gmail.com</a>
+        <p style="margin-top:20px; color:#555;">深圳 | 每周 5 天 | 实习 6 个月+</p>
+    </footer>
+
+</body>
+</html>
