@@ -1,279 +1,401 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王子钰 | Ziyu Wang - Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0d0d0d;
-            --accent: #d4af37;
-            --text: #ffffff;
-            --muted: #b0b0b0;
-            --card-bg: #1a1a1a;
-            --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); color: var(--text); font-family: 'Noto Sans SC', sans-serif; line-height: 1.6; }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10%;
-            background: linear-gradient(135deg, #0d0d0d 60%, #1a1a1a 100%);
-        }
-        .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; line-height: 1; margin: 20px 0; }
-        .hero-img {
-            width: 380px; height: 500px;
-            border: 8px solid var(--card-bg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
-        .hero-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-        .hero-img:hover img { transform: scale(1.03); }
-
-        /* --- Layout Grid --- */
-        .container { padding: 80px 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .section-card { background: var(--card-bg); padding: 45px; border-radius: 4px; border: 1px solid #252525; }
-        .full-width { grid-column: span 3; }
-        .span-2 { grid-column: span 2; }
-
-        h2 { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 2.4rem; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        h3 { color: var(--accent); font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
-        .date-location { font-size: 0.85rem; color: var(--muted); margin-bottom: 15px; display: block; }
-        
-        ul { list-style: none; }
-        li { margin-bottom: 12px; position: relative; padding-left: 20px; color: #ddd; font-size: 0.95rem; }
-        li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
-
-        /* --- Portfolio Clickable --- */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .pdf-link {
-            text-decoration: none; color: inherit; display: block;
-            background: #222; padding: 30px; border-left: 4px solid var(--accent);
-            transition: var(--transition);
-        }
-        .pdf-link:hover { background: #2a2a2a; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .pdf-link span { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
-
-        .skill-tag { 
-            display: inline-block; border: 1px solid var(--accent); color: var(--accent);
-            padding: 4px 12px; margin: 5px; font-size: 0.8rem; border-radius: 20px;
-        }
-
-        footer { padding: 100px 10%; background: #080808; text-align: center; }
-        .contact-info { font-size: 1.5rem; color: var(--accent); text-decoration: none; font-family: 'Playfair Display', serif; }
-
-        @media (max-width: 1024px) {
-            .container { grid-template-columns: 1fr; }
-            .span-2, .full-width { grid-column: span 1; }
-            .hero { flex-direction: column; text-align: center; height: auto; padding-top: 50px; }
-            .hero-img { margin-top: 40px; width: 300px; height: 400px; }
-        }
-    </style>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<title>王子钰 - 个人简历</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Times New Roman', '宋体', 'Songti SC', serif;
+    font-size: 13.4px;
+    letter-spacing: 0.29px;
+    line-height: 1.34;
+    color: #222;
+    background: #fff;
+    padding: 0px 0px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  /* Header */
+  .header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 7.7px;
+    margin-bottom: 11.5px;
+  }
+  .header h1 {
+    font-size: 22.1px;
+    font-weight: bold;
+    letter-spacing: 1.9px;
+    margin-bottom: 3.8px;
+  }
+  .header .contact {
+    font-size: 11.5px;
+    color: #444;
+  }
+  .header .contact a {
+    color: #444;
+    text-decoration: none;
+  }
+  /* Section */
+  .section {
+    margin-bottom: 9.6px;
+  }
+  .section-title {
+    font-size: 13.4px;
+    font-weight: bold;
+    letter-spacing: 0.96px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1.9px;
+    margin-bottom: 5.8px;
+    color: #111;
+  }
+  /* Entry */
+  .entry {
+    margin-bottom: 5.8px;
+  }
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+  .entry-title {
+    font-weight: bold;
+    font-size: 13.4px;
+  }
+  .entry-subtitle {
+    font-style: italic;
+    font-size: 11.5px;
+    color: #333;
+  }
+  .entry-date {
+    font-size: 11.5px;
+    color: #555;
+    white-space: nowrap;
+  }
+  .entry ul {
+    margin-left: 17.3px;
+    margin-top: 1.9px;
+  }
+  .entry li {
+    margin-bottom: 1px;
+    font-size: 12px;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  /* Education inline details */
+  .edu-details {
+    font-size: 11.5px;
+    margin-top: 1px;
+  }
+</style>
 </head>
 <body>
+<div class="container">
 
-    <section class="hero">
-        <div class="hero-text">
-            <p style="letter-spacing: 4px; color: var(--accent);">CURRICULUM VITAE</p>
-            <h1>王子钰<br>ZIYU WANG</h1>
-            <p style="max-width: 500px; color: var(--muted); font-size: 1.1rem;">
-               
-                中山大学学士学位 | 金融学辅修，历史学主修 | gpa4.0 （3/68）<br>
-            </p>
+  <!-- Header -->
+  <div class="header">
+    <h1>王子钰（ZIYU WANG）</h1>
+    <div class="contact">
+      广东深圳 &nbsp;|&nbsp; (+86) 188-2336-6646 &nbsp;|&nbsp;
+      <a href="mailto:wangziyu0707.esther@gmail.com">wangziyu0707.esther@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- 教育背景 -->
+  <div class="section">
+    <div class="section-title">教育背景</div>
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中山大学</span>
+          <span class="entry-subtitle"> — 历史学学士（金融学辅修）</span>
         </div>
-        <div class="hero-img">
-            <img src="%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260303095704_714_99.jpg" alt="王子钰个人照片">
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="section-card span-2">
-            <h2>Internship Experience</h2>
-            <div class="exp-item">
-    <h3>影石 Insta360 | 培训赋能实习生（运营）</h3>
-    <span class="date-location">2026.04 - 至今</span>
-    <ul>
-        <li>面向零售门店 / 一线销售开设多节消费电子产品知识课程，覆盖运动相机、全景影像等产品线，帮助渠道准确理解产品特性与核心卖点。</li>
-        <li>梳理并输出配套的销售话术与渠道策略，覆盖"无忧换"政策、新品上市等关键流程，赋能一线提升成单转化。</li>
-        <li>联动产品 / 市场团队，把产品卖点翻译成渠道可执行的 SOP，缩短"产品—渠道—成交"链路。</li>
-    </ul>
-</div>
-            <!-- 修改1：更新实习经历部分 -->
-            <div class="exp-item">
-                <h3>岭南学院 AI 转型技术支持小分队 | 项目助理</h3>
-                <span class="date-location">2025.12 - 2026.03</span>
-                <ul>
-                    <li>使用 Open Code 参与全院 AI 工具推广，设计三阶段培训体系，推进档案数字化与行政效率自动化。</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>TOPONE | 数据与报告实习生</h3>
-                <span class="date-location">2025.07 - 2025.09 | 远程</span>
-                <ul>
-                    <li>独立产出 6 份海外游戏市场调研报告，建立"市场信号-产品迭代"分析框架，聚焦 App Store 榜单变化与品类趋势。</li>
-                    <li>建立转化率归因模型，量化广告投放逻辑与用户行为的关联，开发图表与演示材料，优化报告视觉呈现。</li>
-                    <li>搭建数据监控报表体系追踪运营指标，实现报告清晰度提升 15%。</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>Save the Children（联合国附属机构）| 数据分析实习生</h3>
-                <span class="date-location">2025.10 - 2026.03 | 广州</span>
-                <ul>
-                    <li>整合中美两国就业数据（分层抽样 vs 人口普查），追踪 1000+ 青年样本求职行为变化。</li>
-                    <li>设计活动参与度追踪矩阵，建立"行为-结果"归因模型，量化职业嘉年华对申请量/面试转化率的影响路径。</li>
-                    <li>参与输出就业质量报告，聚焦工资水平、合同正式性、福利指标，分析体面劳动的达成情况。</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-    <h3>广州日报 | 研究与编辑实习生</h3>
-    <span class="date-location">2024.10 - 2025.05</span>
-    <ul>
-        <li>汇编广州国际美妆周 5000+ 条媒体报道，追踪央媒/省媒/地方媒体的传播渠道分布与覆盖率。</li>
-        <li>整理全运会志愿者表彰大会工作方案，参与设计"签到—暖场—颁奖"三阶段活动流程。</li>
-        <li>协助智慧教育政策年报资料整理，梳理国家到地方的政策传导机制与执行效果。</li>
-    </ul>
-</div>
-
-<div class="exp-item">
-    <h3>深圳商报 | 内容运营实习生</h3>
-    <span class="date-location">2023.07 - 2023.09</span>
-    <ul>
-        <li>运营微信公众号内容矩阵，分析阅读量/在看数/分享量的用户互动漏斗，定位内容转化节点。</li>
-        <li>追踪热点话题的流量峰值规律，建立"选题—内容—分发"的时间窗口模型，优化发布时机。</li>
-    </ul>
-</div>
-        </div>
-
-        <div class="section-card">
-            <h2>Education</h2>
-            <p><strong>中山大学</strong></p>
-            <p class="date-location">2022.09 - 2026.06</p>
-            <ul>
-                <li>历史学 (主修) / 金融学 (辅修)</li>
-                <li>GPA: 3.8 / 4.0 (排名 3/68)</li>
-                <li>连续三年获得国家奖学金</li>
-            </ul>
-
-            <h2 style="margin-top:40px;">Core Skills</h2>
-            <div style="margin-top:15px;">
-                <span class="skill-tag">Python (Pandas)</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">SPSS / R</span>
-                <span class="skill-tag">IELTS 8.0</span>
-                <span class="skill-tag">Spanish B1</span>
-                <span class="skill-tag">数据可视化</span>
-                <span class="skill-tag">史料解读</span>
-            </div>
-        </div>
-
-        <!-- 修改4：Research Portfolio部分改为4个报告 -->
-        <div class="section-card full-width">
-            <h2>Research Portfolio</h2>
-            <p style="margin-bottom:20px; color:var(--muted)">点击下方卡片可直接在线预览调研报告全文：</p>
-            <div class="portfolio-grid">
-                <a href="Job_Linkage_Study_Protocol.pdf" target="_blank" class="pdf-link">
-                     <span>PDF Report</span>
-                     <h4 style="margin-top:10px;">Job_Linkage_Study_Protocol</h4>
-                     <p style="font-size:0.8rem; margin-top:5px; color:#888;">Save the Children 青年就业影响分析研究设计 | 中美对比框架</p>
-                </a>
-                <a href="2025_Total_Reach_Highlights.pptx.pdf" target="_blank" class="pdf-link">
-                    <span>PDF Report</span>
-                    <h4 style="margin-top:10px;">2025 Total Reach Highlights</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">MEAL 传播覆盖效果报告 | 活动影响力量化分析</p>
-                </a>
-
-                <a href="竞品分析.pdf" target="_blank" class="pdf-link">
-                    <span>PDF Report</span>
-                    <h4 style="margin-top:10px;">清理工具竞品调研</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">拆解 AppStore Top100 转化钩子与素材逻辑。</p>
-                </a>
-                <a href="休闲游戏调研总结.pdf" target="_blank" class="pdf-link">
-                    <span>PDF Report</span>
-                    <h4 style="margin-top:10px;">休闲游戏市场总结</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">分析海外及微信小游戏品类趋势与艺术风格。</p>
-                </a>
-                <a href="海外遥控器产品评论分析.pdf" target="_blank" class="pdf-link">
-                    <span>PDF Report</span>
-                    <h4 style="margin-top:10px;">海外遥控器评论分析</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">基于用户痛点洞察连接稳定性与商业化建议。</p>
-                </a>
-                <a href="全国学联骨干社情小调研-中山大学学生会.pdf" target="_blank" class="pdf-link">
-                    <span>PDF Report</span>
-                    <h4 style="margin-top:10px;">港澳青年大湾区创业实践访谈调研</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">中山大学学生会 | 合著20,000字调研报告</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- 修改3：新增推送作品模块 -->
-        <div class="section-card full-width">
-            <h2>推送作品</h2>
-            <p style="margin-bottom:20px; color:var(--muted)">点击卡片可直接跳转微信文章：</p>
-            <div class="portfolio-grid">
-                <a href="https://mp.weixin.qq.com/s/3fwZnatELa3Lqvfj5T2KGQ" target="_blank" class="pdf-link">
-                    <span>WeChat Article</span>
-                    <h4 style="margin-top:10px;">穿越烽火的课堂：中大学生记者追寻坪石办学记忆</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">坪石办学历史报道 | 作者团队成员</p>
-                </a>
-                <a href="https://mp.weixin.qq.com/s/Rn7zuW-99-_fI3EiyxFFHw" target="_blank" class="pdf-link">
-                    <span>WeChat Article</span>
-                    <h4 style="margin-top:10px;">今天上映！坪石先生，是谁？</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">电影《坪石先生》相关报道</p>
-                </a>
-                <a href="https://mp.weixin.qq.com/s/DzDxufm5To2tW9nO4wmRHw" target="_blank" class="pdf-link">
-                    <span>WeChat Article</span>
-                    <h4 style="margin-top:10px;">中大与澳门的故事，不止25年！</h4>
-                    <p style="font-size:0.8rem; margin-top:5px; color:#888;">中大与澳门渊源专题 | 编辑团队成员</p>
-                </a>
-            </div>
-        </div>
-
-        <!-- 修改2：更新Leadership & Projects部分 -->
-        <div class="section-card span-2">
-            <h2>Leadership & Projects</h2>
-            <div class="exp-item">
-                <h3>中山大学深圳寒招队 | 队长</h3>
-                <span class="date-location">2023.12 - 2025.03</span>
-                <ul>
-                    <li>统筹 440 人跨校区团队，建立"宣传-执行-反馈"三阶段工作流，设计分工协调机制与组织架构。</li>
-                    <li>搭建数据监控体系追踪公众号阅读量、视频号播放量等指标，形成"内容曝光-用户互动-转化复盘"的分析闭环，总曝光量 14W+。</li>
-                </ul>
-            </div>
-            <div class="exp-item">
-                <h3>中山大学学生会宣传调研部 | 部长</h3>
-                <span class="date-location">2023.09 - 2025.07</span>
-                <ul>
-                    <li>领导 10 人团队运营校学生会公众号，设计关键词优化策略，实现总浏览量 50,000+，提升用户互动率。</li>
-                    <li>开展港澳青年大湾区创业实践访谈调研，合著 20,000 字分析报告，梳理创业支持政策的传导路径与青年需求匹配度。</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <h2>Other Projects</h2>
-            <ul>
-                <li><strong>廉洁文化展：</strong>史料搜集、撰稿与讲解。</li>
-                <li><strong>北京路调研：</strong>管理学院调研数据分类呈现。</li>
-                <li><strong>中大附中实习：</strong>事业单位运行模式研究。</li>
-            </ul>
-        </div>
+        <div class="entry-date">2022.09 – 2026.06</div>
+      </div>
+      <div class="edu-details">
+        GPA: <span class="bold">3.9/4.0</span>（专业排名 <span class="bold">3/68</span>）&nbsp;|&nbsp; 优秀毕业生 &nbsp;|&nbsp; 国家奖学金（2023–2026，连续三年）&nbsp;|&nbsp; 中山大学优秀学生奖学金一等奖（2023–2026）
+      </div>
     </div>
 
-    <footer>
-        <a href="mailto:wangziyu0707.esther@gmail.com" class="contact-info">wangziyu0707.esther@gmail.com</a>
-        <p style="margin-top:20px; color:#555;">深圳 | 每周 5 天 | 实习 6 个月+</p>
-    </footer>
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">宾夕法尼亚大学</span>
+          <span class="entry-subtitle"> — K-12 教育国际培训项目</span>
+        </div>
+        <div class="entry-date">2023</div>
+      </div>
+    </div>
+  </div>
 
-</body>
+  <!-- 工作经历 -->
+  <div class="section">
+    <div class="section-title">工作经历</div>
 
-</html>
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">GSR Technology Hong Kong</span>
+          <span class="entry-subtitle"> — 供应商管理专员</span>
+        </div>
+        <div class="entry-date">2026.08 – 至今</div>
+      </div>
+      <ul>
+        <li>供应商开发与评估：筛查并评估欧洲及新兴市场的国际人力资源服务商，考察其 EOR（名义雇主）服务能力、工作许可办理与当地合规资质。</li>
+        <li>客户需求与商务拓展：沟通国际客户业务需求，评估中国企业出海需求及本地市场落地方案；谈判商务条款，推动跨境业务合作落地。</li>
+        <li>供应商关系与项目协调：维护海外合作伙伴关系，管理供应商 onboarding 流程，协同内外部团队响应客户需求，支持国际人力部署。</li>
+        <li>合规与文档审查：审核供应商资质、服务协议与合规文件，降低运营风险，保障服务交付质量。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">影石 Insta360</span>
+          <span class="entry-subtitle"> — 培训赋能实习生（运营）</span>
+        </div>
+        <div class="entry-date">2026.05 – 2026.10</div>
+      </div>
+      <ul>
+        <li>独立设计「用满课程课件集合」多维表单，覆盖课程登记、分类、细则、满意度、签到、学习数据、需求收集与数据看板 <span class="bold">8 大模块</span>，串联「需求收集—开课—归档—数据复盘」闭环，实现培训可视化运营。</li>
+        <li>完成 <span class="bold">4 节</span>课程开发与授课、<span class="bold">3 节</span>中英文课程翻译，独立开发 Insta360 App 兼容性课程；设计 Insta360 App 专项培训、BPO 讲师等级认证考核、新人训练营 <span class="bold">3 个</span>专项项目（中英文共 6 版）。</li>
+        <li>输出飞书知识库课程归档 SOP，明确三方责任与关键节点，独立完成 Q2 课程 <span class="bold">90%+</span> 归档；设计讲师/学员积分核算逻辑与飞书自动提醒卡片，降低人工催办成本。</li>
+        <li>负责 Q2、Q3 学习经费与大部门团建经费的申报、核对与跟踪；推进部门文化墙方案设计与 KT 板装潢落地。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">岭南学院 AI 转型技术支持小分队</span>
+          <span class="entry-subtitle"> — 项目助理</span>
+        </div>
+        <div class="entry-date">2025.12 – 2026.03</div>
+      </div>
+      <ul>
+        <li>使用 Open Code 参与全院 AI 工具推广，设计三阶段培训体系，推进档案数字化与行政流程自动化，提升行政效率。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Save the Children</span>
+          <span class="entry-subtitle"> — MEAL 实习生</span>
+        </div>
+        <div class="entry-date">2025.11 – 2026.08 &nbsp;|&nbsp; 广州</div>
+      </div>
+      <ul>
+        <li>整合中美两国就业干预调研数据，追踪 <span class="bold">100+</span> 参与者从基线到随访的求职行为变化，支持跨区域项目评估。</li>
+        <li>设计活动参与度追踪矩阵，建立「行为—结果」归因模型，量化职业活动对申请量与面试转化率的影响路径。</li>
+        <li>参与输出就业质量报告，聚焦工资水平、合同正式性、福利指标，分析体面劳动达成情况。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">TOPONE</span>
+          <span class="entry-subtitle"> — 海外广告投放实习生（Overseas Advertising Intern）</span>
+        </div>
+        <div class="entry-date">2025.05 – 2025.07 &nbsp;|&nbsp; 广州</div>
+      </div>
+      <ul>
+        <li>独立产出 <span class="bold">6 份</span>海外游戏市场调研报告，覆盖日本、墨西哥、西班牙、意大利、法国、美国、韩国等市场，锁定海外用户 <span class="bold">Top 3</span> 玩法偏好。</li>
+        <li>为移动清理类 App 设计视频广告创意概念并对接制作团队；设计控制变量 A/B 测试，在 Twitter/X 监测投放数据并据此优化素材。</li>
+        <li>建立转化率归因模型，搭建数据监控报表体系追踪运营指标，实现报告清晰度提升 <span class="bold">15%</span>。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">广州日报</span>
+          <span class="entry-subtitle"> — 公共事务策划实习生（Public Affairs Planning Intern）</span>
+        </div>
+        <div class="entry-date">2024.11 – 2025.03</div>
+      </div>
+      <ul>
+        <li>汇编广州国际美妆周 <span class="bold">5000+ 条</span>媒体报道，追踪央媒/省媒/地方媒体的传播渠道分布与覆盖率。</li>
+        <li>策划广州农民运动讲习所宣讲活动，面向学生群体传播历史文化内容；协助智慧教育政策年报资料整理与全运会志愿者表彰大会工作方案设计。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Headlines 新媒体工作室</span>
+          <span class="entry-subtitle"> — 新媒体内容编辑（远程）</span>
+        </div>
+        <div class="entry-date">2024.10 – 2025.04</div>
+      </div>
+      <ul>
+        <li>撰写并排版微信公众号内容，面向大学生读者报道国家级新闻与政策，把关内容准确性与排版质量。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">深圳商报</span>
+          <span class="entry-subtitle"> — 内容运营实习生</span>
+        </div>
+        <div class="entry-date">2024.07 – 2024.09</div>
+      </div>
+      <ul>
+        <li>将民宿推广广告信息改写为符合小红书平台调性的内容，贴合平台规范与用户偏好。</li>
+        <li>策划并发布品牌内容，使单帖互动从约 10 个赞提升至 <span class="bold">100+</span>；运营微信公众号矩阵，分析阅读/在看/分享互动漏斗，优化发布时机。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 研究经历 -->
+  <div class="section">
+    <div class="section-title">研究经历</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">「世纪中大·廉洁风华」廉洁文化教育展</span>
+          <span class="entry-subtitle"> — 史料研究与展陈策划</span>
+        </div>
+        <div class="entry-date">2026</div>
+      </div>
+      <ul>
+        <li>隶属社会学与人类学学院组建的展览团队，负责展陈策划、史料编纂与撰稿，展览由中山大学纪检监察办公室主办。</li>
+        <li>系统梳理历史报刊，编纂 <span class="bold">50+ 条</span>史料，奠定研究报告写作与大众传播能力基础。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">本科毕业论文 — 飞虎队形象在华建构与社会动员</span>
+        </div>
+        <div class="entry-date">2025 – 2026</div>
+      </div>
+      <ul>
+        <li>比较《中央日报》《大公报》《新华日报》等报纸叙事，考察中国媒体如何建构与传播飞虎队形象。</li>
+        <li>分析媒体叙事如何反映政治利益，并促进社会对中美合作的认知。</li>
+        <li>利用中国报纸、FRUS 档案与英国图书馆馆藏开展档案与内容研究。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">从广州电力公司股权变动看地方公用事业困境</span>
+        </div>
+        <div class="entry-date">2024 – 2025</div>
+      </div>
+      <ul>
+        <li>结合定性历史研究与输电损耗、汇率波动的定量分析，考察近代地方公用事业的经营困境。</li>
+        <li>获中山大学本科生学术论坛二等奖、香港中文大学（深圳）本科生学术论坛二等奖。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中国包税制研究</span>
+        </div>
+        <div class="entry-date">2024 – 2025</div>
+      </div>
+      <ul>
+        <li>围绕近代中国包税制度的运作机制与财政影响开展专题研究，梳理制度演变脉络与相关史料。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中山大学肖鹏教授课题组 — 研究助理</span>
+          <span class="entry-subtitle"> — 教育部学位中心 2024 主题案例项目：数字智能赋能文化遗产保护与传承</span>
+        </div>
+        <div class="entry-date">2024</div>
+      </div>
+      <ul>
+        <li>负责北京路历史文化数据平台的基础数据收集与整理，完成档案资料的检索、导出、标准化与筛查。</li>
+        <li>支持课题组阶段性数据汇总与成果整理。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">珠海金花信仰与仪式的演变</span>
+          <span class="entry-subtitle"> — 项目负责人 · 大学生创新训练项目</span>
+        </div>
+        <div class="entry-date">2023 – 2024</div>
+      </div>
+      <ul>
+        <li>开展田野调查，访谈 <span class="bold">19 位</span>村民与创业者，考察地方仪式与文化实践的当代变迁。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 学生工作与社团 -->
+  <div class="section">
+    <div class="section-title">学生工作与社团</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中山大学啦啦操队暨艺术体操队</span>
+          <span class="entry-subtitle"> — 队长</span>
+        </div>
+        <div class="entry-date">在校期间</div>
+      </div>
+      <ul>
+        <li>率领队伍获<span class="bold">全国大学生啦啦操锦标赛第二名</span>、<span class="bold">广东省大学生啦啦操联赛第一名</span>。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中山大学学生会宣传调研部</span>
+          <span class="entry-subtitle"> — 部长</span>
+        </div>
+        <div class="entry-date">2023.09 – 2025.07</div>
+      </div>
+      <ul>
+        <li>领导 10 人团队运营校学生会微信公众号，设计关键词优化策略，实现总浏览量 <span class="bold">50,000+</span>。</li>
+        <li>开展港澳青年大湾区创业实践访谈调研，合著 <span class="bold">20,000 字</span>分析报告，梳理创业支持政策传导路径与青年需求匹配度。</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">中山大学深圳寒招队</span>
+          <span class="entry-subtitle"> — 队长</span>
+        </div>
+        <div class="entry-date">2023.12 – 2025.03</div>
+      </div>
+      <ul>
+        <li>统筹 <span class="bold">440 人</span>跨校区团队，建立「宣传—执行—反馈」三阶段工作流与分工协调机制。</li>
+        <li>产出 <span class="bold">47 篇</span>宣传推文，形成「内容曝光—用户互动—转化复盘」分析闭环，总曝光量 <span class="bold">140,000+</span>。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 技能 / 语言 / 兴趣 -->
+  <div class="section">
+    <div class="section-title">技能 / 语言 / 兴趣</div>
+    <div class="edu-details"><span class="bold">技能：</span>Python（Pandas）、SQL、SPSS / R、数据可视化、史料解读、Vibe Coding</div>
+    <div class="edu-details"><span class="bold">语言：</span>IELTS 7.0（听力 8 / 阅读 8.5）、西班牙语 B1</div>
+    <div class="edu-details"><span class="bold">兴趣：</span>羽毛球、网球、排球、徒步、登山、啦啦操 / 艺术体操</div>
+  </div>
+
+</div>
+
+</body></html>
